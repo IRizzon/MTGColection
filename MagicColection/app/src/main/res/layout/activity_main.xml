@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/idTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -31,7 +31,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/idIndice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -42,12 +42,20 @@
                 tools:layout_editor_absoluteX="97dp"
                 tools:layout_editor_absoluteY="143dp" />
 
+            <Spinner
+                android:layout_width="275dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"/>
+
+
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="275dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:outlineProvider="background"
                 android:textColorHint="#C9694C"
                 app:boxStrokeColor="#C9694C"
@@ -65,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#AA0C00"
+                android:backgroundTint="#811A00"
                 android:fontFamily="@font/ubuntu"
                 android:text="Adicionar coleção"
                 android:textColor="#CCCCCC"

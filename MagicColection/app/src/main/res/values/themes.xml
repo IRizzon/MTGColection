@@ -3,10 +3,10 @@
     <style name="Theme.MagicColection" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#C9694C</item>
-        <item name="colorPrimaryVariant">#F44336</item>
+        <item name="colorPrimaryVariant">#811A00</item>
         <item name="colorOnPrimary">#979797</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#F44336</item>
+        <item name="colorSecondary">#811A00</item>
         <item name="colorSecondaryVariant">#C9694C</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
