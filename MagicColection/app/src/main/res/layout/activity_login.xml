@@ -57,16 +57,19 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha" />
+            android:hint="Senha"
+            android:inputType="textPassword"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/idEnter"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:text="Entrar"
         android:textColor="#CCCCCC"
+        android:backgroundTint="#AA0C00"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
@@ -77,26 +80,33 @@
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/idEnter">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/ubuntu_light"
-            android:text="Ainda não possui conta?"
-            android:textColor="#C9694C" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/ubuntu"
-            android:text="Cadastre-se"
-            android:textColor="#AA0C00"
-            android:textStyle="bold"
-            android:pointerIcon="hand"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_light"
+        android:text="Ainda não possui conta?"
+        android:textColor="#C9694C"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="504dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu"
+        android:pointerIcon="hand"
+        android:text="Cadastre-se"
+        android:textColor="#AA0C00"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="514dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
