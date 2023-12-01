@@ -43,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
         idCollectAccess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent telaColecao = new Intent(MainActivity.this, CollectionActivity.class);
                 startActivity(telaColecao);
                 finish();
+
             }
         });
     }
