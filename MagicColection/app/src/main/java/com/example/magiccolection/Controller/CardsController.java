@@ -7,8 +7,9 @@ import com.example.magiccolection.DataBase.MTGDB;
 import com.example.magiccolection.Model.Cards;
 import com.example.magiccolection.View.CollectionActivity;
 
-public class CardsController extends MTGDB {
+import java.util.List;
 
+public class CardsController extends MTGDB {
 
     public CardsController(CollectionActivity collectionActivity) {
         super(collectionActivity);
@@ -25,5 +26,10 @@ public class CardsController extends MTGDB {
 
         saveCard("collection", data);
 
+    }
+
+    public List<Cards> getDataList(){
+
+        return dataListener();
     }
 }

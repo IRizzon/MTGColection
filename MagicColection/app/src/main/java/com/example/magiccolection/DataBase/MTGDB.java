@@ -6,6 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.magiccolection.Model.Cards;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MTGDB extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "mtg_db";
@@ -42,9 +47,36 @@ public class MTGDB extends SQLiteOpenHelper {
 
     }
 
-    public void saveCard(String tabela, ContentValues dados){
+    public void saveCard(String tabela, ContentValues data){
 
-        db.insert(tabela, null , dados);
+        db.insert(tabela, null , data);
 
+    }
+
+    public List<Cards> dataListener(){
+
+        List<Cards> list = new ArrayList<>();
+
+        Cards registro;
+
+        String querySql = "SELECT * FROM collection";
+
+        cursor = db.rawQuery(querySql, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                registro = new Cards();
+
+                registro.setId(cursor.getInt(0));
+                registro.setName(cursor.getString(1));
+                registro.setColor(cursor.getString(2));
+                registro.setType(cursor.getString(3));
+                registro.setRarity(cursor.getString(4));
+                list.add(registro);
+
+            }while(cursor.moveToNext());
+        }else{}
+
+        return list;
     }
 }
