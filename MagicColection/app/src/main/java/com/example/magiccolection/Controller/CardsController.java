@@ -32,4 +32,12 @@ public class CardsController extends MTGDB {
 
         return dataListener();
     }
+
+    public void excluirCard(int cardId) {
+        deleteCard(cardId);
+    }
+
+    public void atualizarCard(Cards card) {
+        updateCard(card);
+    }
 }

@@ -79,4 +79,50 @@ public class MTGDB extends SQLiteOpenHelper {
 
         return list;
     }
+
+    public Cards getCardById(int cardId) {
+        Cards card = new Cards();
+
+        String[] columns = {"id", "nomeCarta", "tipoCarta", "corCarta", "raridade"};
+        String selection = "id = ?";
+        String[] selectionArgs = {String.valueOf(cardId)};
+
+        Cursor cursor = db.query("collection", columns, selection, selectionArgs, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            card.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            card.setName(cursor.getString(cursor.getColumnIndex("nomeCarta")));
+            card.setType(cursor.getString(cursor.getColumnIndex("tipoCarta")));
+            card.setColor(cursor.getString(cursor.getColumnIndex("corCarta")));
+            card.setRarity(cursor.getString(cursor.getColumnIndex("raridade")));
+
+            cursor.close();
+        }
+
+        return card;
+    }
+
+    public void deleteCard(int cardId) {
+
+        if (cardId > 0) {
+            String whereClause = "id=?";
+            String[] data = {String.valueOf(cardId)};
+
+            getWritableDatabase().delete("collection", whereClause, data);
+        }
+    }
+
+    public void updateCard(Cards card) {
+        ContentValues values = new ContentValues();
+
+        values.put("nomeCarta", card.getName());
+        values.put("tipoCarta", card.getType());
+        values.put("corCarta", card.getColor());
+        values.put("raridade", card.getRarity());
+
+        String whereClause = "id = ?";
+        String[] data = {String.valueOf(card.getId())};
+
+        db.update("collection", values, whereClause, data);
+    }
 }
